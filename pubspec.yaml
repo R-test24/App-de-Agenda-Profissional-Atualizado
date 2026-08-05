@@ -1,0 +1,68 @@
+name: gestao_agenda
+
+description: "Aplicativo profissional de gerenciamento de agendas e atendimentos."
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.12.2
+
+
+dependencies:
+
+  flutter:
+    sdk: flutter
+
+  # Ícones padrão Flutter
+  cupertino_icons: ^1.0.8
+
+  # Banco de dados offline SQLite
+  sqflite: ^2.3.3+1
+  path: ^1.9.0
+
+  # Firebase (uso futuro)
+  firebase_core: ^3.15.1
+  cloud_firestore: ^5.6.12
+
+  # Calendário em português
+  flutter_localizations:
+    sdk: flutter
+
+  # Gráficos dos relatórios
+  fl_chart: ^0.69.0
+
+
+dev_dependencies:
+
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^6.0.0
+
+  # Gerador de ícones Android e iOS
+  flutter_launcher_icons: ^0.14.1
+
+
+flutter:
+
+  uses-material-design: true
+
+  assets:
+    - assets/icon/icon.png
+
+
+# Configuração do ícone do aplicativo
+
+flutter_launcher_icons:
+
+  android: true
+
+  ios: true
+
+  image_path: "assets/icon/icon.png"
+
+  adaptive_icon_background: "#374151"
+
+  adaptive_icon_foreground: "assets/icon/icon.png"
