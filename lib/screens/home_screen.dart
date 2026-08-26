@@ -6,6 +6,7 @@ import 'agenda_screen.dart';
 import 'relatorios_screen.dart';
 
 import '../repositories/agendamento_repository.dart';
+import '../services/licenca_service.dart';
 
 
 class HomeScreen extends StatefulWidget {
@@ -40,18 +41,68 @@ class _HomeScreenState extends State<HomeScreen> {
 
   String proximoHorario = "Nenhum";
 
+  String plano = "Carregando...";
+  String vencimento = "Carregando...";
+  String diasRestantes = "";
+  bool licencaVitalicia = false;
+
+
+  
+
 
 
   @override
-  void initState(){
+void initState() {
+  super.initState();
 
-    super.initState();
+  carregarDados();
+  carregarLicenca();
+}
 
-    carregarDados();
+  Future<void> carregarLicenca() async {
+  final licencaService = LicencaService();
 
-  }
+  final dados = await licencaService.obterDadosLocais();
 
+  if (!mounted) return;
 
+  final planoLocal =
+      dados['plano']?.toString();
+
+  final dataExpiracao =
+      dados['dataExpiracao'] as DateTime?;
+
+  final dias =
+      dados['diasRestantes'] as int?;
+
+  setState(() {
+    plano = planoLocal == null ||
+            planoLocal.isEmpty
+        ? "Não informado"
+        : planoLocal;
+
+    licencaVitalicia =
+        dados['vitalicia'] == true;
+
+    if (licencaVitalicia) {
+      vencimento = "Sem vencimento";
+      diasRestantes = "";
+    } else if (dataExpiracao != null) {
+      vencimento =
+          "${dataExpiracao.day.toString().padLeft(2, '0')}/"
+          "${dataExpiracao.month.toString().padLeft(2, '0')}/"
+          "${dataExpiracao.year}";
+
+      diasRestantes =
+          dias == null
+              ? ""
+              : "$dias dias restantes";
+    } else {
+      vencimento = "Não informado";
+      diasRestantes = "";
+    }
+  });
+}
 
 
 

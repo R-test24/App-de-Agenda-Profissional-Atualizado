@@ -17,10 +17,7 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      throw UnsupportedError(
-        'DefaultFirebaseOptions have not been configured for web - '
-        'you can reconfigure this by running the FlutterFire CLI again.',
-      );
+      return web;
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
@@ -28,15 +25,9 @@ class DefaultFirebaseOptions {
       case TargetPlatform.iOS:
         return ios;
       case TargetPlatform.macOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for macos - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return macos;
       case TargetPlatform.windows:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for windows - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return windows;
       case TargetPlatform.linux:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for linux - '
@@ -50,19 +41,44 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyCmVQjBH6bHjBpNbojNEHZDSwqyl8FFjik',
-    appId: '1:885204265378:android:7c5494cebdb0719fbb6afb',
-    messagingSenderId: '885204265378',
-    projectId: 'agenda-1-849c9',
-    storageBucket: 'agenda-1-849c9.firebasestorage.app',
+    apiKey: 'AIzaSyCIP4ofPLfn8au53fLznsVSpV9pHm0-NN8',
+    appId: '1:890573643466:android:a2af43e5be30fb2cdc1e33',
+    messagingSenderId: '890573643466',
+    projectId: 'rc-apps-digital',
+    storageBucket: 'rc-apps-digital.firebasestorage.app',
+  );
+  static const FirebaseOptions ios = FirebaseOptions(
+    apiKey: 'AIzaSyA9e06PKrjUXV9JGwQJwgoAK3MO5RWJ5HU',
+    appId: '1:890573643466:ios:f06c9d6be594dec4dc1e33',
+    messagingSenderId: '890573643466',
+    projectId: 'rc-apps-digital',
+    storageBucket: 'rc-apps-digital.firebasestorage.app',
+    iosBundleId: 'com.example.agendaNails',
+  );
+  static const FirebaseOptions web = FirebaseOptions(
+    apiKey: 'AIzaSyB0p4JzDYLX_qKPFa7dIdPJymoddIHTNPU',
+    appId: '1:890573643466:web:288ae4ebb8f6a684dc1e33',
+    messagingSenderId: '890573643466',
+    projectId: 'rc-apps-digital',
+    authDomain: 'rc-apps-digital.firebaseapp.com',
+    storageBucket: 'rc-apps-digital.firebasestorage.app',
   );
 
-  static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyByODkIMrHqeulqeH6SGexNSzIGstbtp3s',
-    appId: '1:885204265378:ios:2d29163c718a4093bb6afb',
-    messagingSenderId: '885204265378',
-    projectId: 'agenda-1-849c9',
-    storageBucket: 'agenda-1-849c9.firebasestorage.app',
+  static const FirebaseOptions macos = FirebaseOptions(
+    apiKey: 'AIzaSyA9e06PKrjUXV9JGwQJwgoAK3MO5RWJ5HU',
+    appId: '1:890573643466:ios:f06c9d6be594dec4dc1e33',
+    messagingSenderId: '890573643466',
+    projectId: 'rc-apps-digital',
+    storageBucket: 'rc-apps-digital.firebasestorage.app',
     iosBundleId: 'com.example.agendaNails',
+  );
+
+  static const FirebaseOptions windows = FirebaseOptions(
+    apiKey: 'AIzaSyB0p4JzDYLX_qKPFa7dIdPJymoddIHTNPU',
+    appId: '1:890573643466:web:5b80894e6e0a215fdc1e33',
+    messagingSenderId: '890573643466',
+    projectId: 'rc-apps-digital',
+    authDomain: 'rc-apps-digital.firebaseapp.com',
+    storageBucket: 'rc-apps-digital.firebasestorage.app',
   );
 }

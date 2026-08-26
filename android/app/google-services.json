@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "885204265378",
-    "project_id": "agenda-1-849c9",
-    "storage_bucket": "agenda-1-849c9.firebasestorage.app"
+    "project_number": "890573643466",
+    "project_id": "rc-apps-digital",
+    "storage_bucket": "rc-apps-digital.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:885204265378:android:7c5494cebdb0719fbb6afb",
+        "mobilesdk_app_id": "1:890573643466:android:a2af43e5be30fb2cdc1e33",
         "android_client_info": {
           "package_name": "com.example.agenda_nails"
         }
@@ -15,7 +15,26 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCmVQjBH6bHjBpNbojNEHZDSwqyl8FFjik"
+          "current_key": "AIzaSyCIP4ofPLfn8au53fLznsVSpV9pHm0-NN8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:890573643466:android:f32483047aaecf45dc1e33",
+        "android_client_info": {
+          "package_name": "com.example.gestao_agenda_admin"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCIP4ofPLfn8au53fLznsVSpV9pHm0-NN8"
         }
       ],
       "services": {
